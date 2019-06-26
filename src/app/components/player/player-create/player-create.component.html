@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>New Player</mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Email"
+          [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-hint align="end">Hint:email@domain.com</mat-hint>
+        <mat-error align="end"
+          *ngIf="
+            emailFormControl.hasError('email') &&
+            !emailFormControl.hasError('required')
+          "
+        >
+          Oof</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+            <input matInput placeholder="GamePreference">
+        </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openRepDialong()">SAVE</button>
+  </mat-card-actions>
+</mat-card>

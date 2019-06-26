@@ -1,0 +1,49 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidevnav"  > 
+   
+    <button color="primary" mat-button routerLink="/tournament">Tournament</button>
+    <button color="primary" mat-button routerLink="/team">Team</button>
+    <button color="primary" mat-button routerLink="/statistics">Statistics</button>
+    <button color="primary" mat-button routerLink="/match">Matches</button>
+    <button  color="primary" mat-button routerLink="/player">Players</button>
+
+  </mat-drawer>
+  <div class="sidenav-content">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+          <button mat-icon-button (click)="drawer.toggle()">
+              <mat-icon>  
+                star
+              </mat-icon>
+            </button>
+            <span>
+              Tournament
+            </span>
+            <span class="spacer"></span>
+            <mat-icon>
+              favorite
+            </mat-icon>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>publish</mat-icon>
+                <span>Share</span>
+              </button>
+              <button mat-menu-item  disabled>
+                <mat-icon>mode_comment</mat-icon>
+                <span>Comment</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+  <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
