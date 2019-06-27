@@ -20,14 +20,14 @@
         >
       </mat-form-field>
       <mat-form-field class="full-width">
-          <input matInput placeholder="Name">
+          <input [(ngModel)]="player.name" placeholder="Name" name="name" class="form-control" id="name">
       </mat-form-field>
       <mat-form-field class="full-width">
-            <input matInput placeholder="GamePreference">
+          <input [(ngModel)]="player.game_preferences" placeholder="Game preference" name="game_preferences" class="form-control" id="game_preferences">
         </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="openRepDialong()">SAVE</button>
+      <button mat-raised-button color="primary" (click)="addPlayer()">Save</button>
   </mat-card-actions>
 </mat-card>

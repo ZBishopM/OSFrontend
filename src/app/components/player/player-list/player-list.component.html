@@ -3,23 +3,28 @@
     <ng-template matTabContent>
 
         <table style="width:100%">
+          <thead>
             <tr>
+              <th>Id </th>
               <th>Name</th>
               
               <th>Team</th> 
               
               <th>Game Preferences</th>
+              <th>Team Id</th>
             </tr>
-            <tr>
-              <td align="center">Fjorpa</td>
-              <td align="center">BicaSquad</td> 
-              <td align="center">Chessito</td>
+          </thead>  
+          <tbody>
+            
+            <tr *ngFor="let item of players">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.gamePreference}}</td>
+              <td>{{item.teamid}}</td>
             </tr>
-            <tr>
-              <td align="center">Ralc</td>
-              <td align="center">BicaSquad</td> 
-              <td align="center">AutoChess</td>
-            </tr>
+
+          </tbody>
+            
           </table>
           
       <button type="button" (click)="openCreate()">Create Player </button>
